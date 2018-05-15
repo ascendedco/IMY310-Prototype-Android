@@ -85,7 +85,7 @@ public class Seeding {
                 "Traditional lemon meringue.",
                 categories.get(3), true,0,45.00));
         items.add(new Item(16,"Chocolate Brownie",
-                "Large chocolate brownie with some whipped cream",
+                "Large chocolate brownie with some whipped cream.",
                 categories.get(3), true,0,45.00));
         items.add(new Item(17,"Chocolate Mousse",
                 "Traditional chocolate mousse.",
@@ -110,7 +110,7 @@ public class Seeding {
         orderOne.add(items.get(11));
         orderOne.add(items.get(13));
         orderOne.add(items.get(14));
-        orders.add(new Order(0,tables.get(6),orderThree,0,"Ready"));
+        orders.add(new Order(2,tables.get(6),orderThree,0,"Ready"));
 
     }
 }
