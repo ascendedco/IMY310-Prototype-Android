@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offWhite"
+    tools:context=".waiters.OrderActivity">
+
+    <ImageView
+        android:id="@+id/imageViewHeader"
+        android:background="@drawable/gradient_background"
+
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="38%"/>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/percentRelativeLayoutToolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/transparent"
+        app:layout_heightPercent="12%"
+        app:layout_marginTopPercent="4%"
+        app:layout_widthPercent="100%">
+
+        <co.ascended.waiterio.widget.IconButton
+            android:id="@+id/buttonMenu"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_button"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_menu"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginLeftPercent="3%"
+            app:layout_widthPercent="14%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:id="@+id/buttonBack"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_button"
+            android:visibility="invisible"
+            android:alpha="0"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_back"
+
+            app:icon_width="0.75"
+            app:layout_aspectRatio="100%"
+            app:layout_marginLeftPercent="3%"
+            app:layout_widthPercent="14%" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:text="new order"/>
+
+        <co.ascended.waiterio.widget.IconButton
+            android:id="@+id/buttonAdd"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button"
+            android:alpha="0"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_add"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="3%"
+            app:layout_widthPercent="14%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/percentRelativeLayoutIndicator"
+        android:layout_below="@+id/percentRelativeLayoutToolbar"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_background_indicator"
+
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="88%">
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/magicIndicator"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+
+            app:layout_heightPercent="75%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <io.github.armcha.coloredshadow.ShadowImageView
+        android:id="@+id/shadowImage"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/percentRelativeLayoutIndicator"
+        android:src="@drawable/shape_background_list"
+        tools:alpha="0"
+
+        app:radiusOffset="1"
+        app:shadowColor="@color/shadow"
+
+        app:layout_heightPercent="63%"
+        app:layout_widthPercent="98%"/>
+
+    <io.github.armcha.coloredshadow.ShadowImageView
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/viewPager"
+        android:src="@drawable/shape_background_list"
+
+        app:radiusOffset="1"
+        app:shadowColor="@color/blueDark99"
+
+        app:layout_marginTopPercent="1%"
+        app:layout_heightPercent="13.8%"
+        app:layout_widthPercent="98%"/>
+
+    <co.ascended.waiterio.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/percentRelativeLayoutIndicator"
+        android:background="@drawable/shape_background_list"
+        tools:elevation="0dp"
+
+        app:layout_marginTopPercent="3%"
+        app:layout_heightPercent="57%"
+        app:layout_widthPercent="88%"/>
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_below="@+id/viewPager"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/selector_button_next"
+        android:fontFamily="@font/nunito"
+
+        android:stateListAnimator="@null"
+        android:text="next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+
+        app:layout_heightPercent="9%"
+        app:layout_marginTopPercent="3%"
+        app:layout_widthPercent="88%" />
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/percentRelativeLayoutSearch"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:alpha="0"
+
+        app:layout_heightPercent="12%"
+        app:layout_marginTopPercent="4%"
+        app:layout_widthPercent="100%">
+
+        <io.github.armcha.coloredshadow.ShadowImageView
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/shape_background_list"
+
+            app:radiusOffset="1"
+            app:shadowColor="@color/shadow"
+
+            app:layout_marginTopPercent="1%"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="100%"/>
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+
+            android:hint="Search for an item..."
+            android:textSize="15sp"
+            android:textColor="@color/blueLight"
+            android:textColorHint="@color/blueLight40"
+            android:maxLines="1"
+
+            app:layout_marginLeftPercent="10%"
+            app:layout_heightPercent="70%"
+            app:layout_widthPercent="70%"/>
+
+        <co.ascended.waiterio.widget.IconButton
+            android:id="@+id/buttonSearch"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/blueLight"
+            app:icon_drawable_0="@drawable/vector_search"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="6%"
+            app:layout_widthPercent="14%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/percentRelativeLayoutResults"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:alpha="0"
+
+        app:layout_marginTopPercent="11.5%"
+        app:layout_heightPercent="88.5%"
+        app:layout_widthPercent="100%">
+
+        <io.github.armcha.coloredshadow.ShadowImageView
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/shape_background_list"
+
+            app:radiusOffset="1"
+            app:shadowColor="@color/shadow"
+
+            app:layout_marginTopPercent="1%"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="100%"/>
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/item1"
+            android:layout_centerHorizontal="true"
+            app:layout_marginTopPercent="5%"
+            app:layout_widthPercent="96%"
+            app:layout_heightPercent="12%">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:text="Steak Sandwich"
+
+                app:layout_marginLeftPercent="10%"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/blueLight"
+                android:textSize="16sp"
+                android:text="R 60.00"
+
+                app:layout_marginLeftPercent="50%"/>
+
+            <Button
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/selector_button_next"
+
+                android:stateListAnimator="@null"
+                android:text="add"
+                android:fontFamily="@font/nunito"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                app:layout_heightPercent="50%"
+                app:layout_marginRightPercent="10%"
+                app:layout_widthPercent="18%" />
+
+            <View
+                android:layout_height="0.5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/gray"
+
+                app:layout_widthPercent="80%"/>
+
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/item2"
+            android:layout_below="@+id/item1"
+            android:layout_centerHorizontal="true"
+            app:layout_widthPercent="96%"
+            app:layout_heightPercent="12%">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:text="Steamed Salmon"
+
+                app:layout_marginLeftPercent="10%"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/blueLight"
+                android:textSize="16sp"
+                android:text="R 88.00"
+
+                app:layout_marginLeftPercent="50%"/>
+
+            <Button
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/selector_button_next"
+
+                android:stateListAnimator="@null"
+                android:text="add"
+                android:fontFamily="@font/nunito"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                app:layout_heightPercent="50%"
+                app:layout_marginRightPercent="10%"
+                app:layout_widthPercent="18%" />
+
+            <View
+                android:layout_height="0.5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/gray"
+
+                app:layout_widthPercent="80%"/>
+
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/item3"
+            android:layout_below="@id/item2"
+            android:layout_centerHorizontal="true"
+            app:layout_widthPercent="96%"
+            app:layout_heightPercent="12%">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:text="Steamed Veggies"
+
+                app:layout_marginLeftPercent="10%"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="@font/nunito"
+                android:textColor="@color/blueLight"
+                android:textSize="16sp"
+                android:text="R 35.00"
+
+                app:layout_marginLeftPercent="50%"/>
+
+            <Button
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/selector_button_next"
+
+                android:stateListAnimator="@null"
+                android:text="add"
+                android:fontFamily="@font/nunito"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                app:layout_heightPercent="50%"
+                app:layout_marginRightPercent="10%"
+                app:layout_widthPercent="18%" />
+
+            <View
+                android:layout_height="0.5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/gray"
+
+                app:layout_widthPercent="80%"/>
+
+        </android.support.percent.PercentRelativeLayout>
+
+    </android.support.percent.PercentRelativeLayout>
+
+</android.support.percent.PercentRelativeLayout>

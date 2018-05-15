@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offWhite"
+    tools:context=".waiters.OrderActivity">
+
+    <ImageView
+        android:id="@+id/imageViewHeader"
+        android:background="@drawable/gradient_background"
+
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="38%"/>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/percentRelativeLayoutToolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/transparent"
+        app:layout_heightPercent="12%"
+        app:layout_marginTopPercent="4%"
+        app:layout_widthPercent="100%">
+
+        <co.ascended.waiterio.widget.IconButton
+            android:id="@+id/buttonMenu"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_button"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_menu"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginLeftPercent="3%"
+            app:layout_widthPercent="14%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:id="@+id/buttonBack"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_button"
+            android:visibility="invisible"
+            android:alpha="0"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_back"
+
+            app:icon_width="0.75"
+            app:layout_aspectRatio="100%"
+            app:layout_marginLeftPercent="3%"
+            app:layout_widthPercent="14%" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:text="waiterio"/>
+
+        <co.ascended.waiterio.widget.IconButton
+            android:id="@+id/buttonAdd"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button"
+            android:alpha="0"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_add"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="3%"
+            app:layout_widthPercent="14%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/percentRelativeLayoutIndicator"
+        android:layout_below="@+id/percentRelativeLayoutToolbar"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_background_indicator"
+
+        app:layout_heightPercent="7%"
+        app:layout_widthPercent="88%">
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/magicIndicator"
+            android:layout_centerInParent="true"
+
+            app:layout_widthPercent="95%"
+            app:layout_heightPercent="75%" />
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <io.github.armcha.coloredshadow.ShadowImageView
+        android:id="@+id/shadowImage"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/percentRelativeLayoutIndicator"
+        android:src="@drawable/shape_background_list"
+        tools:alpha="0"
+
+        app:radiusOffset="1"
+        app:shadowColor="@color/shadow"
+
+        app:layout_heightPercent="63%"
+        app:layout_widthPercent="98%"/>
+
+    <io.github.armcha.coloredshadow.ShadowImageView
+        android:id="@+id/nextShadow"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/viewPager"
+        android:src="@drawable/shape_background_list"
+
+        app:radiusOffset="1"
+        app:shadowColor="@color/blueDark99"
+
+        app:layout_marginTopPercent="1%"
+        app:layout_heightPercent="13.8%"
+        app:layout_widthPercent="98%"/>
+
+    <io.github.armcha.coloredshadow.ShadowImageView
+        android:id="@+id/servedShadow"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/viewPager"
+        android:src="@drawable/shape_background_list"
+        android:alpha="0"
+
+        app:radiusOffset="1"
+        app:shadowColor="@color/greenDark99"
+
+        app:layout_marginTopPercent="1%"
+        app:layout_heightPercent="13.8%"
+        app:layout_widthPercent="98%"/>
+
+    <io.github.armcha.coloredshadow.ShadowImageView
+        android:id="@+id/cancelShadow"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/viewPager"
+        android:src="@drawable/shape_background_list"
+        android:alpha="0"
+
+        app:radiusOffset="1"
+        app:shadowColor="@color/redDark99"
+
+        app:layout_marginTopPercent="1%"
+        app:layout_heightPercent="13.8%"
+        app:layout_widthPercent="98%"/>
+
+    <co.ascended.waiterio.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/percentRelativeLayoutIndicator"
+        android:background="@drawable/shape_background_list"
+        tools:elevation="0dp"
+
+        app:layout_marginTopPercent="3%"
+        app:layout_heightPercent="57%"
+        app:layout_widthPercent="88%"/>
+
+    <Button
+        android:id="@+id/buttonNew"
+        android:layout_below="@+id/viewPager"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/selector_button_next"
+        android:fontFamily="@font/nunito"
+
+        android:stateListAnimator="@null"
+        android:text="new order"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+
+        app:layout_heightPercent="9%"
+        app:layout_marginTopPercent="3%"
+        app:layout_widthPercent="88%" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_below="@+id/viewPager"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/selector_button_cancel"
+        android:fontFamily="@font/nunito"
+        android:visibility="invisible"
+        android:alpha="0"
+
+        android:stateListAnimator="@null"
+        android:text="order canceled"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:drawableStart="@drawable/vector_error"
+        android:paddingStart="30dp"
+        android:paddingEnd="40dp"
+
+        app:layout_heightPercent="9%"
+        app:layout_marginTopPercent="3%"
+        app:layout_widthPercent="88%" />
+
+    <Button
+        android:id="@+id/buttonServed"
+        android:layout_below="@+id/viewPager"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/selector_button_success"
+        android:fontFamily="@font/nunito"
+        android:visibility="invisible"
+        android:alpha="0"
+
+        android:stateListAnimator="@null"
+        android:text="order served"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:drawableStart="@drawable/vector_success"
+        android:paddingStart="30dp"
+        android:paddingEnd="40dp"
+
+        app:layout_heightPercent="9%"
+        app:layout_marginTopPercent="3%"
+        app:layout_widthPercent="88%" />
+
+</android.support.percent.PercentRelativeLayout>

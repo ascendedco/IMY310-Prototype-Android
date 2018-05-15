@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/layout1"
+        app:layout_marginTopPercent="3%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_widthPercent="43%"
+        app:layout_heightPercent="20%">
+
+        <View
+            android:id="@+id/table1"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/selector_table_inactive"
+
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="100%" />
+
+        <TextView
+            android:id="@+id/textView1"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray90"
+            android:textSize="20sp"
+            android:text="Table 1"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/layout2"
+        android:layout_alignParentEnd="true"
+        app:layout_marginTopPercent="3%"
+        app:layout_marginRightPercent="5%"
+        app:layout_widthPercent="43%"
+        app:layout_heightPercent="20%">
+
+        <View
+            android:id="@+id/table2"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/selector_table_inactive"
+
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="100%" />
+
+        <TextView
+            android:id="@+id/textView2"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray90"
+            android:textSize="20sp"
+            android:text="Table 2"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/layout3"
+        android:layout_below="@+id/layout1"
+        app:layout_marginTopPercent="3%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_widthPercent="43%"
+        app:layout_heightPercent="20%">
+
+        <View
+            android:id="@+id/table3"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/selector_table_active"
+
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="100%" />
+
+        <TextView
+            android:id="@+id/textView3"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/blueLight"
+            android:textSize="20sp"
+            android:text="Table 3"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/layout4"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/layout2"
+        app:layout_marginTopPercent="3%"
+        app:layout_marginRightPercent="5%"
+        app:layout_widthPercent="43%"
+        app:layout_heightPercent="20%">
+
+        <View
+            android:id="@+id/table4"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/selector_table_inactive"
+
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="100%" />
+
+        <TextView
+            android:id="@+id/textView4"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray90"
+            android:textSize="20sp"
+            android:text="Table 4"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/layout5"
+        android:layout_below="@+id/layout3"
+        app:layout_marginTopPercent="3%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_widthPercent="43%"
+        app:layout_heightPercent="20%">
+
+        <View
+            android:id="@+id/table5"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/selector_table_inactive"
+
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="100%" />
+
+        <TextView
+            android:id="@+id/textView5"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray90"
+            android:textSize="20sp"
+            android:text="Table 5"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/layout6"
+        android:layout_below="@id/layout4"
+        android:layout_alignParentEnd="true"
+        app:layout_marginTopPercent="3%"
+        app:layout_marginRightPercent="5%"
+        app:layout_widthPercent="43%"
+        app:layout_heightPercent="20%">
+
+        <View
+            android:id="@+id/table6"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/selector_table_inactive"
+
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="100%" />
+
+        <TextView
+            android:id="@+id/textView6"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray90"
+            android:textSize="20sp"
+            android:text="Table 6"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+</android.support.percent.PercentRelativeLayout>

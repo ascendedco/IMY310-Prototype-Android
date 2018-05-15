@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blueLight">#5CB4E9</color>
+    <color name="blueLight40">#995CB4E9</color>
+    <color name="blueDark">#3D90CA</color>
+    <color name="blueDark99">#993D90CA</color>
+    <color name="greenLight">#5EC482</color>
+    <color name="greenDark">#29ba5c</color>
+    <color name="greenDark99">#9929ba5c</color>
+    <color name="white">#F9FDFF</color>
+    <color name="white99">#99F9FDFF</color>
+    <color name="white50">#50F9FDFF</color>
+    <color name="offWhite">#F4FBFF</color>
+    <color name="shadow">#40000000</color>
+    <color name="gray">#7E7F80</color>
+    <color name="gray90">#907E7F80</color>
+    <color name="selector">#5032393C</color>
+    <color name="redLight">#E53D4E</color>
+    <color name="redDark">#d12032</color>
+    <color name="redDark99">#99d12032</color>
+    <color name="orange">#EE973B</color>
+</resources>

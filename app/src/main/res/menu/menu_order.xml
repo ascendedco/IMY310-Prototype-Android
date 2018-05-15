@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/served"
+        android:icon="@drawable/vector_success"
+        android:title="Order Served" />
+    <item
+        android:id="@+id/cancel"
+        android:icon="@drawable/vector_error"
+        android:title="Cancel Order" />
+</menu>

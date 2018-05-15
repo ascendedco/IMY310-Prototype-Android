@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blueLight</item>
+        <item name="colorPrimaryDark">@color/blueDark</item>
+        <item name="colorAccent">@color/blueLight</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Change the spinner style-->
+        <item name="android:spinnerItemStyle">@style/spinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/spinnerDropDownItemStyle</item>
+    </style>
+
+    <!-- Spinner style -->
+    <style name="spinnerItemStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/blueLight</item>
+    </style>
+
+    <!-- Spinner style drop down style-->
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/blueLight</item>
+    </style>
+
+</resources>

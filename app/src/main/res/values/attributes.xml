@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="icon_button">
+        <attr name="icon_drawable_0" format="reference" />
+        <attr name="icon_drawable_1" format="reference" />
+        <attr name="icon_width" format="float" />
+        <attr name="icon_left" format="float" />
+        <attr name="icon_top" format="float" />
+        <attr name="icon_color_active" format="color" />
+        <attr name="icon_color_inactive" format="color" />
+        <attr name="background_drawable" format="reference" />
+        <attr name="foreground_drawable" format="reference" />
+        <attr name="foreground_width" format="float" />
+    </declare-styleable>
+</resources>

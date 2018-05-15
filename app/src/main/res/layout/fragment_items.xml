@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/item0"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="20%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="2x"
+
+            app:layout_marginLeftPercent="10%"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="Steak Sandwich"
+
+            app:layout_marginLeftPercent="22%"/>
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_pencil"
+
+            app:icon_width="0.49"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="10%"
+            app:layout_widthPercent="8%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_remove"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="20%"
+            app:layout_widthPercent="8%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_add"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="30%"
+            app:layout_widthPercent="8%" />
+
+        <View
+            android:layout_height="0.5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray"
+
+            app:layout_widthPercent="80%"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/item1"
+        android:layout_below="@id/item0"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="20%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="2x"
+
+            app:layout_marginLeftPercent="10%"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="Filter Coffee"
+
+            app:layout_marginLeftPercent="22%"/>
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_pencil"
+
+            app:icon_width="0.49"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="10%"
+            app:layout_widthPercent="8%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_remove"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="20%"
+            app:layout_widthPercent="8%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_add"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="30%"
+            app:layout_widthPercent="8%" />
+
+        <View
+            android:layout_height="0.5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray"
+
+            app:layout_widthPercent="80%"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/item2"
+        android:layout_below="@id/item1"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="20%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="1x"
+
+            app:layout_marginLeftPercent="10%"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="Coca Cola"
+
+            app:layout_marginLeftPercent="22%"/>
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_pencil"
+
+            app:icon_width="0.49"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="10%"
+            app:layout_widthPercent="8%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_remove"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="20%"
+            app:layout_widthPercent="8%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_add"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="30%"
+            app:layout_widthPercent="8%" />
+
+        <View
+            android:layout_height="0.5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray"
+
+            app:layout_widthPercent="80%"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/item3"
+        android:layout_below="@+id/item2"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="20%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="2x"
+
+            app:layout_marginLeftPercent="10%"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            android:text="Fruit Juice"
+
+            app:layout_marginLeftPercent="22%"/>
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_pencil"
+
+            app:icon_width="0.49"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="10%"
+            app:layout_widthPercent="8%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_remove"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="20%"
+            app:layout_widthPercent="8%" />
+
+        <co.ascended.waiterio.widget.IconButton
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selector_button_round"
+
+            app:icon_color_active="@color/white99"
+            app:icon_color_inactive="@color/white"
+            app:icon_drawable_0="@drawable/vector_add"
+
+            app:icon_width="0.45"
+            app:layout_aspectRatio="100%"
+            app:layout_marginRightPercent="30%"
+            app:layout_widthPercent="8%" />
+
+        <View
+            android:layout_height="0.5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray"
+
+            app:layout_widthPercent="80%"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+</android.support.percent.PercentRelativeLayout>
