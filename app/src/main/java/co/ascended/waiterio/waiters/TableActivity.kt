@@ -6,6 +6,7 @@ import android.content.Context
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
@@ -23,34 +24,30 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.Li
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.AccelerateInterpolator
+import co.ascended.waiterio.database.Database
+import co.ascended.waiterio.managers.ManagerActivity
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.addTo
 
 class TableActivity: AppCompatActivity() {
 
-    private val titles = arrayOf("table 1", "table 2", "table 3", "table 4", "table 5", "table 6")
+    private var disposable = CompositeDisposable()
+    private val titles = arrayListOf<String>() // arrayOf("table 1", "table 2", "table 3", "table 4", "table 5", "table 6")
     private var action: OrdersFragment.Action? = null
+    private lateinit var adapter: ViewPagerAdapter
+    private lateinit var navigator: CommonNavigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tables)
 
-        val fragment1 = OrdersFragment.start()
-        val fragment2 = OrdersFragment.start()
-        val fragment3 = OrdersFragment.start()
-        val fragment4 = OrdersFragment.start()
-        val fragment5 = OrdersFragment.start()
-        val fragment6 = OrdersFragment.start()
+        adapter = ViewPagerAdapter(supportFragmentManager)
 
-        val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(fragment1, fragment1.tag())
-        adapter.addFragment(fragment2, fragment2.tag())
-        adapter.addFragment(fragment3, fragment3.tag())
-        adapter.addFragment(fragment4, fragment4.tag())
-        adapter.addFragment(fragment5, fragment5.tag())
-        adapter.addFragment(fragment6, fragment6.tag())
+        viewPager.offscreenPageLimit = 6
         viewPager.adapter = adapter
         viewPager.canPage = true
 
-        val navigator = CommonNavigator(this)
+        navigator = CommonNavigator(this)
         navigator.scrollPivotX = 0.65f
         navigator.adapter = object: CommonNavigatorAdapter() {
 
@@ -83,14 +80,39 @@ class TableActivity: AppCompatActivity() {
         ViewPagerHelper.bind(magicIndicator, viewPager)
         viewPager.clipToOutline = true
 
-        buttonNew.setOnClickListener { OrderActivity.start(this) }
+        buttonNew.setOnClickListener {
+            val fragment = adapter.getItem(viewPager.currentItem) as OrdersFragment
+            OrderActivity.start(this, fragment.table.number)
+        }
 
-        fragment3.listener = { action ->
+        buttonCancel.setOnClickListener {
+            if (action != null) {
+                val order = action!!.order
+                order.status = "Canceled"
+                Database.updateOrder(order)
+                cancelBack()
+            }
+        }
+
+        buttonServed.setOnClickListener {
+            if (action != null) {
+                val order = action!!.order
+                order.status = "Served"
+                Database.updateOrder(order)
+                servedBack()
+            }
+        }
+
+        buttonMenu.setOnClickListener {
+            ManagerActivity.start(this)
+        }
+
+        /*fragment3.listener = { action ->
             when (action) {
                 is OrdersFragment.Action.Cancel -> showCancelOrder()
                 is OrdersFragment.Action.Served -> showOrderServed()
             }
-        }
+        }*/
 
         /*buttonNext.setOnClickListener {
             val nextItem = viewPager.currentItem + 1
@@ -110,15 +132,50 @@ class TableActivity: AppCompatActivity() {
         }*/
     }
 
+    override fun onStart() {
+        super.onStart()
+        adapter.clear()
+        titles.clear()
+        // Get all the tables from the database.
+        Database.tables.distinctUntilChanged()
+            .map { tables -> tables.sortedBy { table -> table.number } }
+            .subscribe { tables ->
+                // Map tables down to simple title strings and add them to the title array.
+                titles.addAll(tables.filter { it.active }.map { table -> "table ${table.number}" })
+                navigator.adapter.notifyDataSetChanged()
+                // Map tables to order fragments and add them to the viewpager adapter.
+                tables.filter { table -> table.active }
+                    .map { table -> OrdersFragment.start(table) }
+                    .forEach { fragment ->
+                        fragment.listener = { action -> handleAction(action) }
+                        adapter.addFragment(fragment, fragment.tag())
+                    }
+            }.addTo(disposable)
+    }
+
     override fun onBackPressed() {
         when (action) {
             is OrdersFragment.Action.Cancel -> cancelBack()
             is OrdersFragment.Action.Served -> servedBack()
-            else -> super.onBackPressed()
+            else -> {
+                AlertDialog.Builder(this)
+                    .setTitle("Exit")
+                    .setMessage("Are you sure you would like to close Waiterio?")
+                    .setPositiveButton("NO", { _, _ -> })
+                    .setNeutralButton("YES", { _, _ -> finish() })
+                    .show()
+            }
         }
     }
 
-    private fun showCancelOrder() {
+    private fun handleAction(action: OrdersFragment.Action) {
+        when (action) {
+            is OrdersFragment.Action.Cancel -> showCancelOrder(action)
+            is OrdersFragment.Action.Served -> showOrderServed(action)
+        }
+    }
+
+    private fun showCancelOrder(action: OrdersFragment.Action) {
         val blueDark = ContextCompat.getColor(this, R.color.blueDark)
         val blueLight = ContextCompat.getColor(this, R.color.blueLight)
         val redDark = ContextCompat.getColor(this, R.color.redDark)
@@ -143,11 +200,11 @@ class TableActivity: AppCompatActivity() {
         buttonCancel.animate().withLayer().alpha(1f).duration = 300
         cancelShadow.animate().withLayer().alpha(1f).duration = 300
         nextShadow.animate().withLayer().alpha(0f).withEndAction {
-            action = OrdersFragment.Action.Cancel()
+            this.action = action
         }.duration = 300
     }
 
-    private fun showOrderServed() {
+    private fun showOrderServed(action: OrdersFragment.Action) {
         val blueDark = ContextCompat.getColor(this, R.color.blueDark)
         val blueLight = ContextCompat.getColor(this, R.color.blueLight)
         val greenDark = ContextCompat.getColor(this, R.color.greenDark)
@@ -172,7 +229,7 @@ class TableActivity: AppCompatActivity() {
         buttonServed.animate().withLayer().alpha(1f).duration = 300
         servedShadow.animate().withLayer().alpha(1f).duration = 300
         nextShadow.animate().withLayer().alpha(0f).withEndAction {
-            action = OrdersFragment.Action.Served()
+            this.action = action
         }.duration = 300
     }
 
@@ -201,6 +258,7 @@ class TableActivity: AppCompatActivity() {
         cancelShadow.animate().withLayer().alpha(0f).duration = 300
         nextShadow.animate().withLayer().alpha(1f).withEndAction {
             buttonCancel.visibility = INVISIBLE
+            this.action = null
         }.duration = 300
     }
 
@@ -229,6 +287,7 @@ class TableActivity: AppCompatActivity() {
         servedShadow.animate().withLayer().alpha(0f).duration = 300
         nextShadow.animate().withLayer().alpha(1f).withEndAction {
             buttonServed.visibility = INVISIBLE
+            this.action = null
         }.duration = 300
     }
 }

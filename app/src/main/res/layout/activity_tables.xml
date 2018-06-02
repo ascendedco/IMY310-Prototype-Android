@@ -95,12 +95,16 @@
         app:layout_heightPercent="7%"
         app:layout_widthPercent="88%">
 
-        <net.lucode.hackware.magicindicator.MagicIndicator
-            android:id="@+id/magicIndicator"
-            android:layout_centerInParent="true"
-
-            app:layout_widthPercent="95%"
-            app:layout_heightPercent="75%" />
+       <RelativeLayout
+           android:layout_centerInParent="true"
+           app:layout_heightPercent="75%"
+           app:layout_widthPercent="94%">
+           <net.lucode.hackware.magicindicator.MagicIndicator
+               android:id="@+id/magicIndicator"
+               android:layout_centerInParent="true"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"/>
+       </RelativeLayout>
 
     </android.support.percent.PercentRelativeLayout>
 

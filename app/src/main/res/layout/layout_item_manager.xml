@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    tools:layout_marginTop="26dp">
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/gray"
+        android:textSize="15sp"
+        android:text="Sirloin Steak 200g"
+
+        app:layout_marginLeftPercent="10%"/>
+
+    <co.ascended.waiterio.widget.IconButton
+        android:id="@+id/buttonEdit"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/selector_button_round"
+
+        app:icon_color_active="@color/white99"
+        app:icon_color_inactive="@color/white"
+        app:icon_drawable_0="@drawable/vector_pencil"
+
+        app:icon_width="0.49"
+        app:layout_aspectRatio="100%"
+        app:layout_marginRightPercent="10%"
+        app:layout_widthPercent="8%" />
+
+    <co.ascended.waiterio.widget.IconButton
+        android:id="@+id/buttonRemove"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/selector_button_round"
+
+        app:icon_color_active="@color/white99"
+        app:icon_color_inactive="@color/white"
+        app:icon_drawable_0="@drawable/vector_delete"
+
+        app:icon_width="0.55"
+        app:layout_aspectRatio="100%"
+        app:layout_marginRightPercent="20%"
+        app:layout_widthPercent="8%" />
+
+    <View
+        android:layout_height="0.5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray"
+
+        app:layout_widthPercent="80%"/>
+
+</android.support.percent.PercentRelativeLayout>

@@ -104,6 +104,7 @@
             app:layout_heightPercent="75%" />
 
         <TextView
+            android:id="@+id/textViewIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -174,6 +175,18 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/percentRelativeLayoutIndicator"
         android:background="@drawable/shape_background_list"
+        tools:elevation="0dp"
+
+        app:layout_marginTopPercent="3%"
+        app:layout_heightPercent="57%"
+        app:layout_widthPercent="88%"/>
+
+    <co.ascended.waiterio.widget.ViewPager
+        android:id="@+id/viewPagerOrders"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/percentRelativeLayoutIndicator"
+        android:background="@drawable/shape_background_list"
+        android:visibility="invisible"
         tools:elevation="0dp"
 
         app:layout_marginTopPercent="3%"
@@ -514,7 +527,14 @@
             app:layout_heightPercent="100%"
             app:layout_widthPercent="100%"/>
 
-        <android.support.percent.PercentRelativeLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewTables"
+            android:layout_centerInParent="true"
+            android:clipToPadding="false"
+            app:layout_widthPercent="96%"
+            app:layout_heightPercent="90%"/>
+
+        <!--<android.support.percent.PercentRelativeLayout
             android:id="@+id/table1"
             android:layout_centerHorizontal="true"
             app:layout_marginTopPercent="5%"
@@ -647,7 +667,7 @@
 
                 app:layout_widthPercent="80%"/>
 
-        </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>-->
 
     </android.support.percent.PercentRelativeLayout>
 

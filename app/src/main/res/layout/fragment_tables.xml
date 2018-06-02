@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.percent.PercentRelativeLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:clipToPadding="false"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="100%"/>
+
+   <!-- <android.support.percent.PercentRelativeLayout
         android:id="@+id/layout1"
         app:layout_marginTopPercent="3%"
         app:layout_marginLeftPercent="5%"
@@ -196,6 +202,6 @@
             android:textSize="20sp"
             android:text="Table 6"/>
 
-    </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>-->
 
 </android.support.percent.PercentRelativeLayout>

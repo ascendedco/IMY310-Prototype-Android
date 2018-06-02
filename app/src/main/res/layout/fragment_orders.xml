@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.percent.PercentRelativeLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:clipToPadding="false"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="80%"/>
+
+    <!--<android.support.percent.PercentRelativeLayout
         android:id="@+id/item0"
         app:layout_widthPercent="100%"
         app:layout_heightPercent="20%"
@@ -170,11 +176,11 @@
 
             app:layout_widthPercent="80%"/>
 
-    </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>-->
 
     <android.support.percent.PercentRelativeLayout
-        android:id="@+id/item4"
-        android:layout_below="@+id/item3"
+        android:id="@+id/containerTotal"
+        android:layout_below="@+id/recyclerView"
         app:layout_widthPercent="100%"
         app:layout_heightPercent="20%"
         android:background="@drawable/selector_list">
@@ -192,6 +198,7 @@
             app:layout_marginLeftPercent="10%"/>
 
         <TextView
+            android:id="@+id/textViewTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -200,7 +207,7 @@
             android:fontFamily="@font/nunito_semibold"
             android:textColor="@color/greenLight"
             android:textSize="16sp"
-            android:text="R 392.00"
+            android:text="R 0.00"
 
             app:layout_marginRightPercent="10%"/>
 

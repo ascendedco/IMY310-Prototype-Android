@@ -1,6 +1,8 @@
 package co.ascended.waiterio.database
 
+import android.util.Log
 import co.ascended.waiterio.entity.*
+import co.ascended.waiterio.widget.tag
 import io.reactivex.subjects.BehaviorSubject
 
 object Database {
@@ -15,11 +17,10 @@ object Database {
     private val itemsList: MutableList<Item> = mutableListOf()
     private val ordersList: MutableList<Order> = mutableListOf()
 
-    fun seed(tables: List<Table>, categories: List<Category>, items: List<Item>, orders: List<Order>) {
+    fun seed(tables: List<Table>, categories: List<Category>, items: List<Item>) {
         this.tablesList.addAll(tables)
         this.categoriesList.addAll(categories)
         this.itemsList.addAll(items)
-        this.ordersList.addAll(orders)
 
         this.tables.onNext(this.tablesList)
         this.categories.onNext(this.categoriesList)
@@ -29,14 +30,15 @@ object Database {
 
     fun addOrder(order: Order) {
         if (!ordersList.contains(order)) {
+            order.number = ordersList.size + 1
             ordersList.add(order)
             orders.onNext(ordersList)
         }
     }
 
     fun updateOrder(order: Order) {
-        if (ordersList.contains(order)) {
-            val index = ordersList.indexOfFirst { it.number == order.number }
+        val index = ordersList.indexOfFirst { it.number == order.number }
+        if (index != -1) {
             ordersList.removeAt(index)
             ordersList.add(order)
             orders.onNext(ordersList)
@@ -51,8 +53,8 @@ object Database {
     }
 
     fun updateTable(table: Table) {
-        if (tablesList.contains(table)) {
-            val index = tablesList.indexOfFirst { it.number == table.number }
+        val index = tablesList.indexOfFirst { it.number == table.number }
+        if (index != -1) {
             tablesList.removeAt(index)
             tablesList.add(table)
             tables.onNext(tablesList)
@@ -61,17 +63,21 @@ object Database {
 
     fun addItem(item: Item) {
         if (!itemsList.contains(item)) {
+            item.id = itemsList.size + 1
             itemsList.add(item)
             items.onNext(itemsList)
         }
     }
 
     fun updateItem(item: Item) {
-        if (itemsList.contains(item)) {
-            val index = itemsList.indexOfFirst { it.id == item.id }
+        val index = itemsList.indexOfFirst { it.id == item.id }
+        if (index != -1) {
             itemsList.removeAt(index)
             itemsList.add(item)
             items.onNext(itemsList)
+        }
+        else {
+            Log.e(tag(), "Item does not exist!")
         }
     }
 

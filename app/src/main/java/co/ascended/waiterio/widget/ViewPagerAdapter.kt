@@ -17,6 +17,11 @@ class ViewPagerAdapter(fragmentManager: FragmentManager): FragmentStatePagerAdap
         }
     }
 
+    fun clear() {
+        fragments.clear()
+        notifyDataSetChanged()
+    }
+
     fun addFragment(fragment: Fragment, title: String, index: Int) {
         if (!fragments.contains(fragment)) {
             fragments.add(index, fragment)

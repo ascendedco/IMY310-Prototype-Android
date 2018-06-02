@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    tools:layout_marginTop="26dp">
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        android:text="Steak Sandwich"
+
+        app:layout_marginLeftPercent="10%"/>
+
+    <TextView
+        android:id="@+id/textViewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/blueLight"
+        android:textSize="14sp"
+        android:text="R 60.00"
+
+        app:layout_marginLeftPercent="50%"/>
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/selector_button_next"
+
+        android:stateListAnimator="@null"
+        android:text="add"
+        android:fontFamily="@font/nunito"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+
+        app:layout_heightPercent="50%"
+        app:layout_marginRightPercent="10%"
+        app:layout_widthPercent="18%" />
+
+    <View
+        android:layout_height="0.5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray"
+
+        app:layout_widthPercent="80%"/>
+
+</android.support.percent.PercentRelativeLayout>
